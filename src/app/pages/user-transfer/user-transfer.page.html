@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tranferencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-title class="ion-text-center">
+        Datos de transferencia
+      </ion-title><br>
+
+      <form (ngSubmit)="transfer()">
+        <ion-item class="ion-align-items-center" lines="inset">
+          <ion-label position="floating">Carnet a Transferir</ion-label>
+          <ion-input [(ngModel)]="data.carnet" name="carnet" clearInput></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-align-items-center" lines="inset">
+          <ion-label position="floating">Monto a Transferir</ion-label>
+          <ion-input [(ngModel)]="data.amount" name="amount" clearInput type="number"></ion-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-start">
+      <ion-button (click)="transfer()" expand="block" shape="round">
+        <ion-icon name="swap-horizontal" slot="start">
+        </ion-icon>
+        Transferir Saldo
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

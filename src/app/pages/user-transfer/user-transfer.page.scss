@@ -1,0 +1,32 @@
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+}
+
+ion-toolbar > ion-title {
+  color: var(--ion-color-light);
+}
+
+ion-back-button {
+  color: var(--ion-color-light);
+}
+
+ion-button {
+  --color: var(--ion-color-light);
+  --background: var(--ion-color-dark);
+  text-transform: none;
+  border-radius: 10px;
+}
+
+ion-card {
+  text-align: center;
+}
+
+ion-item {
+  color: var(--ion-color-medium-shade);
+  --highlight-background: var(--ion-color-secondary-shade);
+  padding-right: 16px;
+}
+
+ion-item.item-has-focus > ion-label {
+  color: var(--ion-color-secondary-shade) !important;
+}

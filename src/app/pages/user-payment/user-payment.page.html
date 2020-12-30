@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-title class="ion-text-center">
+        Cuenta de usuario
+      </ion-title><br>
+
+      <ion-item class="ion-align-items-center" lines="inset">
+        <ion-label color="dark">
+          Saldo actual: <ion-text>₡{{ user.Balance }}</ion-text>
+        </ion-label>
+      </ion-item>
+
+      <form (ngSubmit)="addBalance()">
+        <ion-item *ngIf="user.CardNumber !== ''" class="ion-align-items-center" lines="inset">
+          <ion-label position="floating">Monto deseado</ion-label>
+          <ion-input [(ngModel)]="data.amount" name="amount" clearInput type="number"></ion-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-start">
+      <ion-button *ngIf="user.CardNumber !== ''" expand="block" shape="round" (click)="addBalance()">
+        <ion-icon name="add" slot="start">
+        </ion-icon>
+        Agregar Fondos
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngIf="this.user.CardNumber !== ''" lines="none" [routerLink]="'/user-menu/user-payment-config'" routerDirection="forward">
+      <ion-icon name="card" slot="start"></ion-icon>
+      <ion-text>Configurar</ion-text>
+    </ion-item><br>
+
+    <ion-item lines="full" [routerLink]="'/user-menu/user-payment-add'" routerDirection="forward">
+      <ion-label>Agregar método de pago</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

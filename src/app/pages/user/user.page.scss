@@ -1,0 +1,27 @@
+hr {
+  height: 1px !important;
+  width: 90% !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: var(--ion-color-medium-shade) !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+ion-card {
+  text-align: center;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+}
+
+ion-toolbar > ion-title {
+  color: var(--ion-color-light);
+}
+
+ion-buttons {
+  color: var(--ion-color-light);
+}
+

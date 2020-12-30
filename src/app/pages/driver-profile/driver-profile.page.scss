@@ -1,0 +1,19 @@
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+}
+
+ion-toolbar > ion-title {
+  color: var(--ion-color-light);
+}
+
+ion-back-button{
+  color: var(--ion-color-light);
+}
+
+ion-card {
+  text-align: center;
+}
+
+ion-item {
+  padding-right: 16px;
+}

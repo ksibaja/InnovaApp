@@ -1,0 +1,86 @@
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+}
+
+ion-toolbar > ion-title {
+  color: var(--ion-color-light);
+}
+
+ion-back-button {
+  color: var(--ion-color-light);
+}
+
+ion-button {
+  --color: var(--ion-color-light);
+  --background: var(--ion-color-dark);
+  text-transform: none;
+  border-radius: 10px;
+}
+
+ion-card {
+  text-align: center;
+}
+
+ion-item {
+  color: var(--ion-color-medium-shade);
+  --highlight-background: var(--ion-color-secondary-shade);
+}
+
+ion-item.item-has-focus > ion-label {
+  color: var(--ion-color-secondary-shade) !important;
+}
+
+
+ion-list > ion-item > ion-label {
+  font: lighter;
+  color: var(--ion-color-secondary-shade);
+}
+
+// MD
+ion-content.md {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}
+
+ion-list.md {
+  padding: 20px 0;
+}
+
+ion-content.md ion-list#inbox-list {
+  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
+}
+
+ion-item.md {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: 4px;
+}
+
+ion-content.md ion-item.selected {
+  --background: rgba(var(--ion-color-secondary-shade-rgb), 0.14);
+}
+
+// IOS
+ion-item.ios {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+ion-content.ios {
+  --padding-bottom: 20px;
+}
+
+ion-content.ios ion-list {
+  padding: 20px 0 0 0;
+}
+
+ion-content.ios ion-item.selected {
+  color: var(--ion-color-secondary-shade);
+}
+
+ion-item.selected {
+  --color: var(--ion-color-secondary-shade);
+}

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="clear()" defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="presentPopover($event)" color="light">
+        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Configurar método de pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+    <form (ngSubmit)="updateCard()">
+      <ion-item class="ion-align-items-center" lines="inset">
+        <ion-label position="floating">Número de Tarjeta</ion-label>
+        <ion-input color="dark" [disabled]="!this.userService.edit" [(ngModel)]="this.data.cardNumber" clearInput name="carnet"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-align-items-center" lines="inset">
+        <ion-label position="floating">Fecha de vencimiento</ion-label>
+        <ion-input color="dark" [disabled]="!this.userService.edit" [(ngModel)]="this.data.date" name="amount" clearInput></ion-input>
+      </ion-item>
+    </form>
+  </ion-card-content>
+
+  <ion-card-content class="ion-text-start">
+    <!--
+    <ion-button  color="dark" (click)="updateCard()" expand="block" shape="round">
+      Actualizar datos
+    </ion-button>
+    <br>
+
+    <ion-button color="danger" (click)="deleteCard()" expand="block" shape="round">
+      Eliminar tarjeta
+    </ion-button>-->
+
+    <ion-button style="margin-bottom: 15px;" *ngIf="this.userService.edit" color="dark" (click)="updateCard()" expand="block" shape="round">
+      Guardar cambios
+    </ion-button>
+  </ion-card-content>
+
+</ion-content>

@@ -1,0 +1,30 @@
+.img{
+  max-width: 300px; 
+  max-height: 300px; 
+  display: block; 
+  margin: 0 auto;
+} 
+
+ion-button {
+  margin-top: 2rem;
+  --background: var(--ion-color-secondary-shade);
+  text-transform: none;
+}
+
+ion-item {
+  color: var(--ion-color-medium-shade);
+  --highlight-background: var(--ion-color-secondary-shade);
+}
+
+ion-item.item-has-focus > ion-label {
+  color: var(--ion-color-secondary-shade) !important;
+}
+
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+  text-align: center;
+}
+
+ion-title {
+  color: var(--ion-color-light);
+}

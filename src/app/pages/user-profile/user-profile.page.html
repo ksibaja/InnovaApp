@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-title class="ion-text-center">
+        Información de Usuario
+      </ion-title><br>
+
+      <ion-item lines="inset">
+        <ion-text>
+          Usuario: <ion-text>{{ user.Carnet }}</ion-text>
+        </ion-text>
+      </ion-item>
+
+      <ion-item lines="inset">
+        <ion-text>
+          Nombre: <ion-text>{{ user.Name }}</ion-text>
+        </ion-text>
+      </ion-item>
+
+      <ion-item lines="inset">
+        <ion-text>
+          Saldo: <ion-text>₡{{ user.Balance }}</ion-text>
+        </ion-text>
+      </ion-item>
+
+      <ion-item lines="inset">
+        <ion-icon name="bus" slot="end" [color]="details.color"></ion-icon>
+        <ion-text>
+          Estado: <ion-text [color]="details.color">{{ details.state }}</ion-text>
+        </ion-text>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-text>
+          Detalles: <ion-text [color]="details.color">{{ details.detail }}</ion-text>
+        </ion-text>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

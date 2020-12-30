@@ -1,0 +1,16 @@
+ion-toolbar {
+  --background: var(--ion-color-secondary-shade);
+}
+  
+ion-icon {
+  color: var(--ion-color-secondary-shade);
+}
+  
+ion-toggle {  
+  --background-checked: var(--ion-color-secondary);
+  --handle-background-checked: var(--ion-color-secondary-shade);
+}
+  
+ion-back-button, ion-title {
+  color: var(--ion-color-light);
+}

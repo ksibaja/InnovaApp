@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button [disabled]="!enable()" (click)="loading('Definiendo ubicación...', 1, 1000)">
+        <ion-icon slot="icon-only" name="location"></ion-icon>
+      </ion-button>
+      <ion-button (click)="loading('Quitando datos...', 2, 1000)" [disabled]="!scannedCode">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="secondary-shade">Conductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card>
+    <ion-card-content *ngIf="!scannedCode">
+      <ion-item lines="none">
+        <ion-img [src]="'assets/icon/scan3.png'"></ion-img>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="scannedCode">
+      <ion-title class="ion-text-center">
+        Información de Usuario
+      </ion-title>
+      <ion-item lines="inset">
+        <ion-label>
+          Usuario: {{ scannedCode }}
+        </ion-label>
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-icon name="bus" slot="end" [color]="details.color"></ion-icon>
+        <ion-label>
+          Estado: <ion-text [color]="details.color">{{ details.state }}</ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-text>
+          Detalles: <ion-text [color]="details.color">{{ details.detail }}</ion-text> 
+        </ion-text>
+      </ion-item>
+      <ion-item lines="none" *ngIf="ubication">
+        <ion-label>
+          Parada: {{ user.Location }}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-button class="secondary-shade-bg" expand="block" (click)="scanQR()">
+        <ion-icon name="scan-outline" slot="start">
+        </ion-icon>
+        Escanear Código QR
+      </ion-button>
+      <hr *ngIf="scannedCode">
+      <ion-button [disabled]="!enable()" expand="block" color="dark" *ngIf="scannedCode" (click)="presentAlertConfirm()">
+        <ion-icon name="logo-usd" color="light" slot="start">
+        </ion-icon>
+        <ion-label color="light">
+          Realizar Cobro
+        </ion-label>
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

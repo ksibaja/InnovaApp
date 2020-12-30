@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar método de pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-title class="ion-text-center">
+        Datos de tarjeta
+      </ion-title><br>
+
+      <form (ngSubmit)="addPayment()">
+        <ion-item class="ion-align-items-center" lines="inset">
+          <ion-label position="floating">Número de Tarjeta</ion-label>
+          <ion-input [(ngModel)]="data.cardNumber" clearInput name="carnet"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-align-items-center" lines="inset">
+          <ion-label position="floating">Fecha de vencimiento</ion-label>
+          <ion-input [(ngModel)]="data.date" name="amount" clearInput></ion-input>
+        </ion-item>
+      </form>
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-start">
+      <ion-button (click)="addPayment()" expand="block" shape="round">
+        Agregar tarjeta
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

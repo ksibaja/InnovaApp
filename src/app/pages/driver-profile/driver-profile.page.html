@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-title class="ion-text-center">
+        Información de Usuario
+      </ion-title><br>
+
+      <ion-item lines="inset">
+        <ion-label>
+          Usuario: <ion-text>{{ user.Carnet }}</ion-text>
+        </ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-text>
+          Nombre: <ion-text>{{ user.Name }}</ion-text>
+        </ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
